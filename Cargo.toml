@@ -1,0 +1,36 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/assets",
+    "crates/engine",
+    "crates/mod-api",
+    "crates/mod-rhai",
+    "crates/render",
+    "crates/utils"
+]
+
+[workspace.dependencies]
+assets = { path = "crates/assets" }
+engine = { path = "crates/engine" }
+mod-api = { path = "crates/mod-api" }
+mod-rhai = { path = "crates/mod-rhai" }
+render = { path = "crates/render" }
+utils = { path = "crates/utils" }
+
+anyhow = "1.0.98"
+tracing = "0.1.41"
+pollster = "0.4.0"
+wgpu = "25.0.0"
+winit = "0.29.15"
+
+[package]
+name = "voxely"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+tracing-subscriber = "0.3.19"
+engine.workspace = true
+tracing.workspace = true
+anyhow.workspace = true
+winit.workspace = true
